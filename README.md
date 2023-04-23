@@ -1,5 +1,41 @@
-# Lumberyard
+# 🪵 Lumberyard
 
 Lumberyard is a simple starter theme for Shopify that provides just
 enough structure to get started quickly prototyping a new store, but
 not so much structure that you fight against the theme's defaults.
+
+## Developing
+
+Lumberyard uses [esbuild](https://esbuild.github.io/) to bundle frontend
+packages for the theme. The source frontend files are located in the `src`
+directory.
+
+The `index.mjs` file is used to define the esbuild configuration.
+
+When working on your theme, you'll likely want to run the following commands
+in separate terminal instances.
+
+`shopify theme dev -e`
+
+`npm run build`
+
+## Deploying
+
+When you are ready to deploy your theme use `shopify theme push` to deploy the
+code to your live theme. I suggest connecting your theme to GitHub using a separate
+`production` branch. Shopify will automatically sync any changes made to the theme –
+the schema, and the section and settings configurations that a user controls – back
+to GitHub.
+
+The `production` branch in this setup should be used as a read-only branch that is
+only interacted with by the automatic Shopify integration. Any time you deploy changes,
+do it locally from the `main` branch, using the `shopify theme push` command.
+
+The only caveat is making sure to pull down changes from the production theme first
+(the schema, settings, configuration changes, etc.). Do this using the
+`shopify theme pull` command.
+
+## Required Theme Files
+
+Make sure to search for `Find me in` when getting started in order to update
+all required theme files with your own custom style and code.
