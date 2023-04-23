@@ -1,0 +1,41 @@
+// Tables
+
+// @mixin default-table {
+//   width: 100%;
+//   border-collapse: collapse;
+//   text-align: left;
+
+//   th {
+//     border-bottom: 1px solid $black;
+//     padding-bottom: 20px;
+
+//     & + th {
+//       padding-left: $gutter;
+//     }
+//   }
+
+//   tr {
+//     & + tr {
+//       td {
+//         border-top: 1px solid $black;
+//       }
+//     }
+//   }
+
+//   td {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+
+//     & + td {
+//       padding-left: $gutter;
+//     }
+//   }
+
+//   tfoot {
+//     td {
+//       padding-top: 0;
+//       padding-bottom: 0;
+//     }
+//   }
+// }
+// .default-table { @include default-table; }

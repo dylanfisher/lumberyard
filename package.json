@@ -1,0 +1,33 @@
+{
+  "name": "lumberyard",
+  "version": "1.0.0",
+  "description": "Compiles Sass, autoprefixes, concatenates javascript, etc.",
+  "main": "main.js",
+  "dependencies": {
+    "autoprefixer": "^10.4",
+    "bootstrap": "^5.2",
+    "esbuild": "^0.17",
+    "esbuild-sass-plugin": "^2.4",
+    "jquery": "^3.6",
+    "jquery.easing": "^1.4",
+    "lazysizes": "^5",
+    "lodash": "^4.17",
+    "postcss": "^8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanfisher/lumberyard.git"
+  },
+  "author": "Dylan Fisher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanfisher/lumberyard/issues"
+  },
+  "homepage": "https://github.com/dylanfisher/lumberyard#readme",
+  "scripts": {
+    "build": "node src/index.mjs"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

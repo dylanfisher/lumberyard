@@ -1,0 +1,36 @@
+// Default styles
+
+// Use this class around any user-entered content. This class will format links, lists,
+// and other common HTML elements in a consistent way.
+.default-styles {
+  a {
+    @include default-link;
+  }
+
+  &.default-styles--blank-links {
+    a {
+      @include blank-link;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: map-get($spacers, 6);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // ul {
+  //   @include default-list;
+  // }
+
+  // ol {
+  //   @include numbered-list;
+  // }
+
+  hr {
+    margin-top: map-get($spacers, 6);
+    margin-bottom: map-get($spacers, 6);
+  }
+}

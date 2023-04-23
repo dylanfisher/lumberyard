@@ -1,0 +1,67 @@
+// Breakpoints
+
+// Usage:
+// @include breakpoint(md) {
+//   display: none;
+// }
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: $screen-sm - 1) { @content; }
+  }
+
+  @else if $class == xs-sm {
+    @media (max-width: $screen-md - 1) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: $screen-sm) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: $screen-md) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: $screen-lg) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (min-width: $screen-xl) { @content; }
+  }
+
+  // Vertical breakpoints
+  @else if $class == sm-vert {
+    @media (min-height: $vert-screen-sm) { @content; }
+  }
+
+  // Orientation breakpoints
+  @else if $class == landscape {
+    @media (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $class == portrait {
+    @media (orientation: portrait) {
+      @content;
+    }
+  }
+
+  // Devices that support hover
+  @else if $class == hover {
+    @media (hover: hover) {
+      @content;
+    }
+  }
+
+  @else if $class == not-hover {
+    @media not all and (hover: none) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+  }
+}

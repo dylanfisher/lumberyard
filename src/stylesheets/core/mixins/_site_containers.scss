@@ -1,0 +1,40 @@
+// Site containers
+
+@mixin site-max-width {
+  width: 100%;
+  max-width: $site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.site-max-width { @include site-max-width; }
+
+@mixin site-padding-left {
+  padding-left: $site-padding;
+
+  @include breakpoint(md) {
+    padding-left: $site-padding-md;
+  }
+}
+.site-padding-left { @include site-padding-left; }
+
+@mixin site-padding-right {
+  padding-right: $site-padding;
+
+  @include breakpoint(md) {
+    padding-right: $site-padding-md;
+  }
+}
+.site-padding-right { @include site-padding-right; }
+
+@mixin site-padding {
+  @include site-padding-left;
+  @include site-padding-right;
+}
+.site-padding { @include site-padding; }
+
+@mixin site-container {
+  @include site-max-width;
+  @include site-padding;
+}
+.site-container { @include site-container; }

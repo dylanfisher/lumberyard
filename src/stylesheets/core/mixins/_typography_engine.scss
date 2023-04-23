@@ -1,0 +1,14 @@
+// Font stacks
+$default: sans-serif;
+
+@mixin body-text {
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-family: $default;
+
+  @include breakpoint(md) {
+    font-size: 18px;
+  }
+}
+.body-text { @include body-text; }

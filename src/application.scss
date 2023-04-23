@@ -1,0 +1,30 @@
+@use "sass:math";
+
+// Core - fonts, variables, mixins, etc. These shouldn't output any CSS on their own.
+@import "stylesheets/core/variables";
+@import "stylesheets/core/mixins";
+
+// Vendor
+// @import "stylesheets/vendor/**/*";
+
+// Bootstrap 5 Grid
+@import "stylesheets/bootstrap/grid";
+
+// Base - basic foundation and structural styles
+@import "stylesheets/base/normalize";
+@import "stylesheets/base/typography";
+@import "stylesheets/base/foundation";
+@import "stylesheets/base/images_and_videos";
+@import "stylesheets/base/helper_classes";
+@import "stylesheets/base/blocks";
+
+// Partials - reusable partials and page elements
+@import "stylesheets/partials/header";
+@import "stylesheets/partials/footer";
+@import "stylesheets/partials/default_styles";
+
+// Sections - styles that apply to specific sections
+// @import "stylesheets/sections/text_block";
+
+// Pages - styles that apply to specific pages
+// @import "stylesheets/pages/home";

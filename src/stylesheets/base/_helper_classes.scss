@@ -1,0 +1,40 @@
+// Helper classes
+
+// Alignment
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+.text-center  { text-align: center; }
+.text-justify { text-align: justify; }
+.text-nowrap  { white-space: nowrap; }
+
+// Vertical alignment
+.va-top    { vertical-align: top; }
+.va-middle { vertical-align: middle; }
+.va-bottom { vertical-align: bottom; }
+
+// Transformation
+.text-lowercase  { text-transform: lowercase; }
+.text-uppercase  { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.mb-p { margin-bottom: $paragraph-margin; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Colors
+.color-white { color: $white; }
+.color-black { color: $black; }
+
+.bg-white { background-color: $white; }
+.bg-black { background-color: $black; }
+
+.position-relative { position: relative; }

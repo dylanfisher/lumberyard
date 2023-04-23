@@ -21,9 +21,11 @@
   {{ 'application.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
+  {% render 'header' %}
   <main id="application-wrapper" class="application-wrapper">
     {{ content_for_layout }}
   </main>
-  <script src="{{ 'application.min.js' | asset_url }}" defer="defer"></script>
+  {% render 'footer' %}
+  <script src="{{ 'application.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>

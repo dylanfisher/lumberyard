@@ -1,0 +1,27 @@
+// Layout
+
+@mixin small-gutters {
+  padding-left: math.div($gutter, 2);
+  padding-right: math.div($gutter, 2);
+
+  & > .col,
+  & > [class*="col-"] {
+    padding-left: math.div($gutter, 2);
+    padding-right: math.div($gutter, 2);
+  }
+}
+.small-gutters { @include small-gutters; }
+
+@mixin small-gutters-xs {
+  @include breakpoint(xs) {
+    padding-left: math.div($gutter, 2);
+    padding-right: math.div($gutter, 2);
+
+    & > .col,
+    & > [class*="col-"] {
+      padding-left: math.div($gutter, 2);
+      padding-right: math.div($gutter, 2);
+    }
+  }
+}
+.small-gutters-xs { @include small-gutters-xs; }

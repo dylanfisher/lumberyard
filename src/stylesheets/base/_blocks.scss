@@ -1,0 +1,68 @@
+// Blocks
+
+@mixin block-margin-top {
+  margin-top: $block-margin;
+
+  @include breakpoint(md) {
+    margin-top: $block-margin-md;
+  }
+}
+.block-margin-top { @include block-margin-top; }
+
+@mixin block-margin-bottom {
+  margin-bottom: $block-margin;
+
+  @include breakpoint(md) {
+    margin-bottom: $block-margin-md;
+  }
+}
+.block-margin-bottom { @include block-margin-bottom; }
+
+@mixin block-padding-top {
+  padding-top: $block-margin;
+
+  @include breakpoint(md) {
+    padding-top: $block-margin-md;
+  }
+}
+.block-padding-top { @include block-padding-top; }
+
+@mixin block-padding-bottom {
+  padding-bottom: $block-margin;
+
+  @include breakpoint(md) {
+    padding-bottom: $block-margin-md;
+  }
+}
+.block-padding-bottom { @include block-padding-bottom; }
+
+@mixin block-offset-top {
+  margin-top: -$block-margin;
+
+  @include breakpoint(md) {
+    margin-top: -$block-margin-md;
+  }
+}
+.block-offset-top { @include block-offset-top; }
+
+// .blocks {
+//   .block + .block {
+//     @include block-margin-top;
+//   }
+
+//   .block.d-none + .block {
+//     @include breakpoint(xs-sm) {
+//       margin-top: 0;
+//     }
+//   }
+
+//   .block.d-md-none + .block {
+//     @include breakpoint(md) {
+//       margin-top: 0;
+//     }
+//   }
+
+//   .block--last {
+//     margin-top: 0;
+//   }
+// }

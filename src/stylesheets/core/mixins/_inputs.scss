@@ -1,0 +1,40 @@
+// Inputs
+
+// @mixin default-input-placeholder {
+//   &::placeholder {
+//     color: $gray;
+//   }
+// }
+
+// .default-input-group {
+//   margin-bottom: $space-small;
+// }
+
+// @mixin default-input {
+//   @include body-text;
+//   @include default-input-placeholder;
+//   width: 100%;
+//   border: 1px solid $black;
+//   padding: 12px;
+//   display: block;
+//   border-radius: 0;
+
+//   &[type="checkbox"] {
+//     display: inline-block;
+//     width: auto;
+//   }
+
+//   @include breakpoint(md) {
+//     padding: $gutter;
+//   }
+// }
+// .default-input { @include default-input; }
+
+// textarea.default-input {
+//   min-height: 200px;
+// }
+
+// @mixin default-label {
+//   color: $dark-gray;
+// }
+// .default-label { @include default-label; }
