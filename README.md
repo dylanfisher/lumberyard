@@ -15,9 +15,11 @@ The `index.mjs` file is used to define the esbuild configuration.
 When working on your theme, you'll likely want to run the following commands
 in separate terminal instances.
 
-`shopify theme dev -e`
+`shopify theme dev -e` Uploads the current theme as a development theme to the connected store, then
+prints theme editor and preview URLs to your terminal. While running, changes
+will push to the store in real time.
 
-`npm run build`
+`npm run build` Run the esbuild script to compile frontend assets.
 
 ## Deploying
 

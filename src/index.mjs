@@ -1,7 +1,5 @@
 import esbuild from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
-// TODO: is postcss working?
-// https://mikefallows.com/posts/using-postcss-and-autoprefixer-with-esbuild/
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 
@@ -29,7 +27,12 @@ const plugins = [{
       }
     });
   },
-}, sassPlugin()];
+}, sassPlugin({
+  async transform(source, resolveDir) {
+    const { css } = await postcss([autoprefixer]).process(source, { from: undefined });
+    return css
+  }
+})];
 
 const ctx = await esbuild.context({ ...buildOptions, plugins });
 await ctx.watch();
