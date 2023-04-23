@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="no-js page-title--{{ page_title | handleize }} page-template--{{ template | handleize }}{% if template == 'product' %} {{ product.handle }}{% endif %}" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+  {% render 'meta-tags' %}
+  {{ content_for_header }}
+  {% render 'fonts' %}
+  {{ 'application.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  <main id="application-wrapper" class="application-wrapper">
+    {{ content_for_layout }}
+  </main>
+  <script src="{{ 'application.min.js' | asset_url }}" defer="defer"></script>
+</body>
+</html>
