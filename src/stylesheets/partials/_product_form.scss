@@ -1,0 +1,165 @@
+// Product form
+
+.product-form {
+  display: block;
+}
+
+.product-form__error-message-wrapper:not([hidden]) {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-form__error-message-wrapper svg {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+/* Form Elements */
+.product-form__input {
+  flex: 0 0 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  max-width: 37rem;
+  min-width: fit-content;
+  border: none;
+}
+
+variant-radios,
+variant-selects {
+  display: block;
+}
+
+.product-form__input--dropdown {
+  margin-bottom: 1.6rem;
+}
+
+.product-form__input .form__label {
+  padding-left: 0;
+}
+
+fieldset.product-form__input .form__label {
+  margin-bottom: 0.2rem;
+}
+
+.product-form__input input[type='radio'] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+.product-form__input input[type='radio'] + label {
+  border: var(--variant-pills-border-width) solid rgba(var(--color-foreground), var(--variant-pills-border-opacity));
+  background-color: #dad7cf;
+  color: rgba(var(--color-foreground));
+  border-radius: var(--variant-pills-radius);
+  color: rgb(var(--color-foreground));
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 0.5rem 1rem 0.4rem;
+  line-height: 1;
+  text-align: center;
+  transition: border var(--duration-short) ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-form__input input[type='radio'] + label:before {
+  content: '';
+  position: absolute;
+  top: calc(var(--variant-pills-border-width) * -1);
+  right: calc(var(--variant-pills-border-width) * -1);
+  bottom: calc(var(--variant-pills-border-width) * -1);
+  left: calc(var(--variant-pills-border-width) * -1);
+  z-index: -1;
+  border-radius: var(--variant-pills-radius);
+  box-shadow: var(--variant-pills-shadow-horizontal-offset) var(--variant-pills-shadow-vertical-offset) var(--variant-pills-shadow-blur-radius) rgba(var(--color-shadow), var(--variant-pills-shadow-opacity));
+}
+
+.product-form__input input[type='radio'] + label:hover {
+  border-color: rgb(var(--color-foreground));
+}
+
+.product-form__input input[type='radio']:checked + label {
+  background-color: var(--color-primary);
+  color: #000000;
+}
+
+@media screen and (forced-colors: active) {
+  .product-form__input input[type=radio]:checked + label {
+    text-decoration: underline;
+  }
+}
+
+.product-form__input input[type='radio']:checked + label::selection {
+  background-color: rgba(var(--color-background), 0.3);
+}
+
+.product-form__input input[type='radio']:disabled + label {
+  border-color: rgba(var(--color-foreground), 0.1);
+  color: rgba(var(--color-foreground), 0.4);
+  text-decoration: line-through;
+}
+.product-form__input input[type='radio']:focus-visible + label {
+  box-shadow: 0 0 0 0.3rem var(--color-background),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+}
+
+/* Fallback */
+.product-form__input input[type='radio'].focused + label,
+.no-js .shopify-payment-button__button [role="button"]:focus + label {
+  box-shadow: 0 0 0 0.3rem var(--color-background),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+}
+
+/* No outline when focus-visible is available in the browser */
+.no-js .product-form__input input[type='radio']:focus:not(:focus-visible) + label {
+  box-shadow: none;
+}
+
+.product-form__input .select {
+  max-width: 25rem;
+}
+
+.product-form__submit,
+.shopify-payment-button {
+  margin-bottom: 1rem;
+}
+
+.product-form__submit[aria-disabled="true"] + .shopify-payment-button .shopify-payment-button__button[disabled],
+.product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media screen and (forced-colors: active) {
+  .product-form__submit[aria-disabled="true"] {
+    color: Window;
+  }
+}
+
+/* Overrides */
+.shopify-payment-button__more-options {
+  color: rgb(var(--color-foreground));
+}
+
+.shopify-payment-button {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.shopify-payment-button__button {
+  width: auto;
+  border-radius: 0;
+}
+
+.shopify-payment-button__button--branded {
+  padding: 0;
+}
+

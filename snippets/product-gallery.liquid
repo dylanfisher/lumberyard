@@ -1,0 +1,62 @@
+{%- liquid
+  assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+  assign media_count = product.media.size
+  assign hide_variants = false
+  if hide_variants and media_count > 1
+    assign media_count = media_count | minus: variant_images.size | plus: 1
+  endif
+-%}
+
+<media-gallery id="MediaGallery-{{ identifier }}" role="region" class="product__media-gallery" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
+  <div id="GalleryStatus-{{ identifier }}" class="visually-hidden" role="status"></div>
+  <slider-component id="GalleryViewer-{{ identifier }}" class="slider-mobile-gutter">
+    <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ identifier }}">
+      {{ "accessibility.skip_to_product_info" | t }}
+    </a>
+    <ul id="Slider-Gallery-{{ identifier }}" class="product__media-list product__media-list--count-{{ media_count }} contains-media grid grid--peek list-unstyled slider slider--mobile" role="list">
+      {%- if product.selected_or_first_available_variant.featured_media != null -%}
+        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+        {%- liquid
+          assign media_orientation = 'portrait'
+          if media.aspect_ratio > 1
+            assign media_orientation = 'landscape'
+          endif
+        -%}
+        <li id="Slide-{{ identifier }}-{{ featured_media.id }}" class="product__media-item product__media-item--{{ media_orientation }} grid__item slider__slide is-active{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}" data-media-id="{{ identifier }}-{{ featured_media.id }}">
+          {%- assign media_position = 1 -%}
+          {% render 'product-thumbnail', media: featured_media, position: media_position, loop: true, modal_id: identifier, xr_button: true, media_width: media_width, lazy_load: false, width: 1200 %}
+        </li>
+      {%- endif -%}
+      {%- for media in product.media -%}
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {%- liquid
+            assign media_orientation = 'portrait'
+            if media.aspect_ratio > 1
+              assign media_orientation = 'landscape'
+            endif
+          -%}
+          <li id="Slide-{{ identifier }}-{{ media.id }}" class="product__media-item product__media-item--{{ media_orientation }} grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ identifier }}-{{ media.id }}">
+            {%- liquid
+              assign media_position = media_position | default: 0 | plus: 1
+              assign lazy_load = false
+              if media_position > 1
+                assign lazy_load = true
+              endif
+              render 'product-thumbnail', media: media, position: media_position, loop: true, modal_id: identifier, xr_button: true, media_width: media_width, lazy_load: lazy_load, width: 1200
+            -%}
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+    <div class="slider-buttons no-js-hidden quick-add-hidden small-hide">
+      <button type="button" class="slider-button slider-button--prev" name="previous">Previous</button>
+      <div class="slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+        <span class="slider-counter--total">{{ media_count }}</span>
+      </div>
+      <button type="button" class="slider-button slider-button--next" name="next">Next</button>
+    </div>
+  </slider-component>
+</media-gallery>

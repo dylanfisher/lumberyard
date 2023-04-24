@@ -1,0 +1,41 @@
+<section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}">
+  <div class="site-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          Find me in templates/product.liquid
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {% render 'product-gallery', product: product, identifier: section.id %}
+        </div>
+        <div class="col-md-6">
+          <h1>{{ product.title }}</h1>
+          {% if product.variants.size > 1 %}
+            {% render 'product-variant-picker', product: product, product_form_id: section.id, picker_type: 'button' %}
+          {% endif %}
+          {% render 'product-form', product: product, product_form_id: section.id %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% render 'schema-product', product: product %}
+
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": []
+}
+{% endschema %}

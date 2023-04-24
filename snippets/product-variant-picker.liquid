@@ -9,12 +9,13 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+{% assign identifier = product_form_id %}
 {%- unless product.has_only_default_variant -%}
   {%- if picker_type == 'button' -%}
     <variant-radios
-      id="variant-radios-{{ section.id }}"
+      id="variant-radios-{{ identifier }}"
       class="no-js-hidden"
-      data-section="{{ section.id }}"
+      data-section="{{ identifier }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
         data-update-url="false"
@@ -32,9 +33,9 @@
     </variant-radios>
   {%- else -%}
     <variant-selects
-      id="variant-selects-{{ section.id }}"
+      id="variant-selects-{{ identifier }}"
       class="no-js-hidden"
-      data-section="{{ section.id }}"
+      data-section="{{ identifier }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
         data-update-url="false"
@@ -42,12 +43,12 @@
     >
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+          <label class="form__label" for="Option-{{ identifier }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
           <div class="select">
             <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              id="Option-{{ identifier }}-{{ forloop.index0 }}"
               class="select__select"
               name="options[{{ option.name | escape }}]"
               form="{{ product_form_id }}"
@@ -66,15 +67,15 @@
   {%- endif -%}
 {%- endunless -%}
 
-<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+<noscript class="product-form__noscript-wrapper-{{ identifier }}">
   <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-    <label class="form__label" for="Variants-{{ section.id }}">
+    <label class="form__label" for="Variants-{{ identifier }}">
       Variants
     </label>
     <div class="select">
       <select
         name="id"
-        id="Variants-{{ section.id }}"
+        id="Variants-{{ identifier }}"
         class="select__select"
         form="{{ product_form_id }}"
       >

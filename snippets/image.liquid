@@ -1,0 +1,19 @@
+{% if image != blank %}
+  {%- assign image_size = 2000 -%}{% if width != blank %}{% assign image_size = width %}{% endif %}
+  {%- assign css_class = "" -%}{% if class != blank %}{% assign css_class = class %}{% endif %}
+  {%- assign poi_x = 50 -%}{% if image.presentation.focal_point.x != blank %}{% assign poi_x = image.presentation.focal_point.x %}{% endif %}
+  {%- assign poi_y = 50 -%}{% if image.presentation.focal_point.y != blank %}{% assign poi_y = image.presentation.focal_point.y %}{% endif %}
+  {% if background == true %}
+    <div class="background-image {{ css_class }}"
+         style="background-image: url({{ image | image_url: width: image_size }});
+                background-position: {{ poi_x }}% {{ poi_y }}%;"
+         data-src-full="{{ image | image_url: width: 2000 | escape }}"
+         aria-label="{{ image.alt | escape }}">
+   </div>
+  {% else %}
+    <img class="{{ css_class }}"
+         src="{{ image | image_url: width: image_size }}"
+         data-src-full="{{ image | image_url: width: 2000 | escape }}"
+         alt="{{ image.alt | escape }}">
+  {% endif %}
+{% endif %}
