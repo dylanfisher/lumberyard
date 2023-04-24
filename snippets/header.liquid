@@ -6,6 +6,21 @@
           Find me in snippets/header.liquid
         </div>
       </div>
+      <div class="row">
+        {% assign main_menu_handle = 'main-menu' %}
+        {% assign main_menu = linklists[main_menu_handle] %}
+        {% if main_menu.links.size > 0 %}
+          <nav class="navigation">
+            <ul>
+              {% for link in main_menu.links %}
+                <li {% if link.active %}class="active"{% endif %}>
+                  <a href="{{ link.url }}" class="default-link">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
+      </div>
     </div>
   </div>
 </header>

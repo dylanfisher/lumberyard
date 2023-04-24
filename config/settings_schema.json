@@ -1,3 +1,10 @@
 [
-
+  {
+    "name": "theme_info",
+    "theme_name": "Lumberyard",
+    "theme_version": "1.0.0",
+    "theme_author": "Dylan Fisher",
+    "theme_documentation_url": "https://github.com/dylanfisher/lumberyard",
+    "theme_support_url": "https://github.com/dylanfisher/lumberyard/issues"
+  }
 ]

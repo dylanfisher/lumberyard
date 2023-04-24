@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
   <title>
     {{ page_title }}
     {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -22,10 +25,12 @@
 </head>
 <body>
   {% render 'header' %}
+  {% render 'schema-main' %}
   <main id="application-wrapper" class="application-wrapper">
     {{ content_for_layout }}
   </main>
   {% render 'footer' %}
+  {% render 'theme-dynamic-javascript' %}
   <script src="{{ 'application.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>

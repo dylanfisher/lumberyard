@@ -1,6 +1,18 @@
 @mixin link-hover {
-  border-bottom: 1px solid;
+  text-decoration: underline;
 }
+
+@mixin default-link {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    @include breakpoint(md) {
+      color: gray;
+    }
+  }
+}
+.default-link { @include default-link; }
 
 @mixin blank-link {
   text-decoration: none;
@@ -20,19 +32,6 @@
   }
 }
 .blank-link-hover { @include blank-link-hover; }
-
-@mixin default-link {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s;
-
-  &:hover {
-    @include breakpoint(md) {
-      color: gray;
-    }
-  }
-}
-.default-link { @include default-link; }
 
 .external-link {
   cursor: alias;

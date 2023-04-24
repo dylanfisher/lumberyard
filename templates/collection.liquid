@@ -5,5 +5,27 @@
         Find me in templates/collection.liquid
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      {% if collection.products.size > 0 %}
+        {% for product in collection.products %}
+          <div class="col-6 col-md-3">
+            <a href="{{ product.url }}" class="blank-link">
+              <img src="{{ product.featured_image.src | image_url: width: 1000 }}" alt="{{ product.featured_image.alt | escape }}" class="product-image">
+              <h2 class="product-title">{{ product.title }}</h2>
+              <p class="product-price">{{ product.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="col">
+          No products are associated with this collection.
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>

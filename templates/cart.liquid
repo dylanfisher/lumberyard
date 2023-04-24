@@ -5,5 +5,22 @@
         Find me in templates/cart.liquid
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        {% if cart.item_count > 0 %}
+          <ul>
+            {% for item in cart.items %}
+              <li>
+                {{ item.product.title }}
+                x{{ item.quantity }}
+                {{ item.price | money }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          Your cart is empty.
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>

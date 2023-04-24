@@ -5,5 +5,19 @@
         Find me in templates/article.liquid
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <h1>{{ article.title }}</h1>
+        <div>By {{ article.author }} on {{ article.published_at | date: "%B %d, %Y" }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="default-styles">
+          {{ article.content }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+{% render 'schema-article', article: article %}
