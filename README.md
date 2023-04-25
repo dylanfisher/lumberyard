@@ -4,6 +4,11 @@ Lumberyard is a simple starter theme for Shopify that provides just
 enough structure to get started quickly prototyping a new store, but
 not so much structure that you fight against the theme's defaults.
 
+## TODO
+
+- Finish PDP variant selector, image gallery, add to cart button
+- Convert templates to json format
+
 ## Developing
 
 Lumberyard uses [esbuild](https://esbuild.github.io/) to bundle frontend

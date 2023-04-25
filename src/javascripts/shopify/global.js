@@ -71,10 +71,6 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
 
-    console.log(this);
-    console.log(this.dataset);
-    console.log(this.dataset.section);
-
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
     mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
 

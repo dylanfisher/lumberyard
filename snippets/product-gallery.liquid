@@ -11,7 +11,7 @@
   <div id="GalleryStatus-{{ identifier }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ identifier }}" class="slider-mobile-gutter">
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ identifier }}">
-      {{ "accessibility.skip_to_product_info" | t }}
+      Skip to content
     </a>
     <ul id="Slider-Gallery-{{ identifier }}" class="product__media-list product__media-list--count-{{ media_count }} contains-media grid grid--peek list-unstyled slider slider--mobile" role="list">
       {%- if product.selected_or_first_available_variant.featured_media != null -%}

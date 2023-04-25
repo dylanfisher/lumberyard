@@ -26,7 +26,7 @@
   </div>
   <button class="product__media-toggle quick-add-hidden" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
     <span class="visually-hidden">
-      {{ 'products.product.media.open_media' | t: index: position }}
+      Open
     </span>
   </button>
 </modal-opener>
@@ -40,10 +40,10 @@
   <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
     <span class="deferred-media__poster-button motion-reduce">
       {%- if media.media_type == 'model' -%}
-        <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>
+        <span class="visually-hidden">Play model</span>
         {%- render 'icon-3d-model' -%}
       {%- else -%}
-        <span class="visually-hidden">{{ 'products.product.media.play_video' | t }}</span>
+        <span class="visually-hidden">Play video</span>
         {%- render 'icon-play' -%}
       {%- endif -%}
     </span>
@@ -92,14 +92,14 @@
       <button
         class="button button--full-width product__xr-button"
         type="button"
-        aria-label="{{ 'products.product.xr_button_label' | t }}"
+        aria-label="XR model"
         data-shopify-xr
         data-shopify-model3d-id="{{ media.id }}"
         data-shopify-title="title"
         data-shopify-xr-hidden
         >
         {% render 'icon-3d-model' %}
-        {{ 'products.product.xr_button' | t }}
+        XR Model
       </button>
     {%- endif -%}
   {%- else -%}
