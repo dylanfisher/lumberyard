@@ -65,7 +65,7 @@ if (!customElements.get('media-gallery')) {
           activeMedia.parentElement.scrollTo({ left: activeMedia.offsetLeft });
         }
         if (!this.elements.thumbnails || this.dataset.desktopLayout === 'stacked') {
-          activeMedia.scrollIntoView({behavior: 'smooth'});
+          activeMedia.scrollIntoView({ behavior: 'instant' });
         }
       });
       this.playActiveMedia(activeMedia);

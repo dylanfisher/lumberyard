@@ -6,7 +6,6 @@ not so much structure that you fight against the theme's defaults.
 
 ## TODO
 
-- Finish PDP variant selector, image gallery, add to cart button
 - Convert templates to json format
 
 ## Developing
@@ -40,7 +39,8 @@ do it locally from the `main` branch, using the `shopify theme push` command.
 
 The only caveat is making sure to pull down changes from the production theme first
 (the schema, settings, configuration changes, etc.). Do this using the
-`shopify theme pull` command.
+`shopify theme pull` command. It might be helpful to use the `--only` flag to
+pull down just the configuration changes `shopify theme pull --only config/settings_data.json`.
 
 ## Required Theme Files
 
