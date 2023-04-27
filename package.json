@@ -12,6 +12,7 @@
     "jquery.easing": "^1.4",
     "lazysizes": "^5",
     "lodash": "^4.17",
+    "node-notifier": "^10.0.1",
     "postcss": "^8.4"
   },
   "repository": {

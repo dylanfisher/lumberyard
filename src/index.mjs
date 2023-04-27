@@ -2,6 +2,7 @@ import esbuild from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
+import notifier from 'node-notifier';
 
 const buildOptions = {
   entryPoints: [
@@ -22,6 +23,10 @@ const plugins = [{
     build.onEnd(result => {
       if ( !result || result.errors.length ) {
         console.error('watch build error:', result);
+        notifier.notify({
+          title: 'esbuild error',
+          message: result.pluginName
+        });
       } else {
         console.log(`Built at ${new Date().toLocaleTimeString()}`);
       }

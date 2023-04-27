@@ -17,7 +17,11 @@
 .text-uppercase  { text-transform: uppercase; }
 .text-capitalize { text-transform: capitalize; }
 
-.mb-p { margin-bottom: $paragraph-margin; }
+.mb-p { margin-bottom: $paragraph-margin !important; }
+.m-g { margin: $gutter !important; }
+.p-g { padding: $gutter !important; }
+
+.hidden { display: none !important; }
 
 .sr-only {
   position: absolute;

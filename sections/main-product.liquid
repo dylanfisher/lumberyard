@@ -19,7 +19,7 @@
           {% if product.variants.size > 1 %}
             {% render 'product-variant-picker', product: product, product_form_id: section.id, picker_type: 'button', update_url: false %}
           {% endif %}
-          {% render 'product-form', product: product, product_form_id: product_form_id %}
+          {% render 'product-form', product: product, product_form_id: section.id %}
         </div>
       </div>
     </div>

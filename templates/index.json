@@ -1,4 +1,12 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "main": {
+      "type": "main-index",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
 }

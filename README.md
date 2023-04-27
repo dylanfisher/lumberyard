@@ -5,6 +5,10 @@ enough structure to get started quickly prototyping a new store, but
 not so much structure that you fight against the theme's defaults. Lumberyard
 ships with Bootstrap 5 support out of the box.
 
+## TODO
+
+- Run `shopify theme check` and fix issues and suggestions
+
 ## Developing
 
 Lumberyard uses [esbuild](https://esbuild.github.io/) to bundle frontend
