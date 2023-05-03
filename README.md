@@ -5,6 +5,11 @@ enough structure to get started quickly prototyping a new store, but
 not so much structure that you fight against the theme's defaults. Lumberyard
 ships with Bootstrap 5 support out of the box.
 
+Lumberyard assumes you want to make a completely bespoke theme for your client.
+This blank slate offers a clean way to do that, but it does mean making sure you
+implement all common features of a Shopify. These include add to cart functionality
+based on stock availability, dynamic variant pickers, cart form, etc.
+
 ## TODO
 
 - Run `shopify theme check` and fix issues and suggestions
