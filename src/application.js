@@ -1,10 +1,11 @@
 // Application
-import './javascripts/main.js';
+import './javascripts/main';
 
 // Shopify
-import './javascripts/shopify/global.js';
-import './javascripts/shopify/media_gallery.js';
-import './javascripts/shopify/cart.js';
+import './javascripts/shopify/global';
+import './javascripts/shopify/product_form';
+import './javascripts/shopify/media_gallery';
+import './javascripts/shopify/cart';
 
 // Partials
 import './javascripts/partials/smooth_scroll';

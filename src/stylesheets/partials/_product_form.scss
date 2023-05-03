@@ -131,6 +131,10 @@ fieldset.product-form__input .form__label {
   margin-bottom: 1rem;
 }
 
+.product-form__submit:not(:disabled) {
+  cursor: pointer;
+}
+
 .product-form__submit[aria-disabled="true"] + .shopify-payment-button .shopify-payment-button__button[disabled],
 .product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
   cursor: not-allowed;
