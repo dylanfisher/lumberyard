@@ -14,6 +14,18 @@ based on stock availability, dynamic variant pickers, cart form, etc.
 
 - Run `shopify theme check` and fix issues and suggestions
 
+## Set up a New Theme
+
+- Clone this repo into a new directory `git clone git@github.com:dylanfisher/lumberyard.git my-new-store`
+- Reset the git repo `rm -rf .git`
+- Initialize a new repo `git init`
+- Install [Shopify CLI for themes]([https://shopify.dev/docs/themes/tools/cli](https://shopify.dev/docs/themes/tools/cli/install))
+- Upgrade NPM packages with yarn (optional) `yarn upgrade --latest`
+- Build the frontend assets `npm run build`
+- Start the Shopify development store, passing in the `--store` the first time to specify your new store. `shopify theme dev --store my-new-store`
+- Create a new repo in GitHub and push your changes.
+- Go to Shopify backend, select themes, and press the connect to GitHub button. Select the production branch of your new theme. Publish the theme.
+
 ## Developing
 
 Lumberyard uses [esbuild](https://esbuild.github.io/) to bundle frontend
