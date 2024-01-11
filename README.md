@@ -19,7 +19,7 @@ based on stock availability, dynamic variant pickers, cart form, etc.
 - Clone this repo into a new directory `git clone git@github.com:dylanfisher/lumberyard.git my-new-store`
 - Reset the git repo `rm -rf .git`
 - Initialize a new repo `git init`
-- Install [Shopify CLI for themes]([https://shopify.dev/docs/themes/tools/cli](https://shopify.dev/docs/themes/tools/cli/install))
+- Install [Shopify CLI for themes](https://shopify.dev/docs/themes/tools/cli#installation)
 - Upgrade NPM packages with yarn (optional) `yarn upgrade --latest`
 - Build the frontend assets `npm run build`
 - Start the Shopify development store, passing in the `--store` the first time to specify your new store. `shopify theme dev --store my-new-store`
