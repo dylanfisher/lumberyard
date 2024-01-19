@@ -7,7 +7,7 @@ ships with Bootstrap 5 support out of the box.
 
 Lumberyard assumes you want to make a completely bespoke theme for your client.
 This blank slate offers a clean way to do that, but it does mean making sure you
-implement all common features of a Shopify. These include add to cart functionality
+implement all common features of a Shopify theme. These include add to cart functionality
 based on stock availability, dynamic variant pickers, cart form, etc.
 
 ## TODO
@@ -15,6 +15,18 @@ based on stock availability, dynamic variant pickers, cart form, etc.
 - Replace cart with `liquid-ajax-cart` plugin
 - Replace other Shopify scripts from Dawn theme with more modular solutions
 - Run `shopify theme check` and fix issues and suggestions
+
+## Set up a New Theme
+
+- Clone this repo into a new directory `git clone git@github.com:dylanfisher/lumberyard.git my-new-store`
+- Reset the git repo `rm -rf .git`
+- Initialize a new repo `git init`
+- Install [Shopify CLI for themes](https://shopify.dev/docs/themes/tools/cli#installation)
+- Upgrade NPM packages with yarn (optional) `yarn upgrade --latest`
+- Build the frontend assets `npm run build`
+- Start the Shopify development store, passing in the `--store` the first time to specify your new store. `shopify theme dev --store my-new-store`
+- Create a new repo in GitHub and push your changes.
+- Go to Shopify backend, select themes, and press the connect to GitHub button. Select the production branch of your new theme. Publish the theme.
 
 ## Developing
 
@@ -27,7 +39,7 @@ The `index.mjs` file is used to define the esbuild configuration.
 When working on your theme, you'll likely want to run the following commands
 in separate terminal instances.
 
-`shopify theme dev -e` Uploads the current theme as a development theme to the connected store, then
+`shopify theme dev --theme-editor-sync` Uploads the current theme as a development theme to the connected store, then
 prints theme editor and preview URLs to your terminal. While running, changes
 will push to the store in real time.
 
