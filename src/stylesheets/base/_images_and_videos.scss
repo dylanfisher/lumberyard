@@ -13,11 +13,12 @@ video {
   height: auto;
 }
 
-.sandbox-image-jump-fix {
+.jump-fix {
   position: relative;
   overflow: hidden;
 
-  img {
+  img,
+  .video-wrapper {
     position: absolute;
     top: 0;
     left: 0;

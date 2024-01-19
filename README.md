@@ -12,6 +12,8 @@ based on stock availability, dynamic variant pickers, cart form, etc.
 
 ## TODO
 
+- Replace cart with `liquid-ajax-cart` plugin
+- Replace other Shopify scripts from Dawn theme with more modular solutions
 - Run `shopify theme check` and fix issues and suggestions
 
 ## Developing

@@ -7,7 +7,6 @@
         </div>
       </div>
       <div class="row">
-        {%- assign product_form_id = 'product-form-' | append: section.id -%}
         <div class="col-md-6">
           {% render 'product-gallery', product: product, identifier: section.id %}
         </div>
@@ -19,7 +18,8 @@
           {% if product.variants.size > 1 %}
             {% render 'product-variant-picker', product: product, product_form_id: section.id, picker_type: 'button', update_url: false %}
           {% endif %}
-          {% render 'product-form', product: product, product_form_id: section.id %}
+          {%- assign product_form_id = 'product-form-' | append: section.id -%}
+          {% render 'product-form', product: product, product_form_id: product_form_id %}
         </div>
       </div>
     </div>
